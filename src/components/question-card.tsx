@@ -1,12 +1,22 @@
 import React from 'react';
 
+// First 
+export type AnswerType = {
+    answer: string;
+    correctAnswer: string;
+    isCorrect: boolean;
+    question: string;
+}
+
 // These are the props used for the component
 type Props = {
     answers: string[];
     callback: any;
     question: string;
     questionNr: number;
-    userAnswer: any;
+    // the 'userAnswer' can be undefined in case there is no answers yet, this is how we define the type to be either
+    // 'AnswerType' OR 'undefined' 
+    userAnswer: AnswerType | undefined;
     totalQuestions: number;
 }
 
@@ -29,7 +39,7 @@ const QuestionCard: React.FC<Props> = ({
             to handle what happens when any button is clicked */}
             {answers.map((answer) => (
                 <div key={answer}>
-                    <button disabled={userAnswer} onClick={callback}>
+                    <button disabled={!!userAnswer} value={answer} onClick={callback}>
                         <span dangerouslySetInnerHTML={{__html: answer}} />
                     </button>
                 </div>
