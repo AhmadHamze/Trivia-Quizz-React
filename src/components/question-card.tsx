@@ -1,6 +1,7 @@
 import React from 'react';
+import { Answer } from './answer-tag/Answer';
 
-// First 
+// First define the type of an answer given by the user
 export type AnswerType = {
     answer: string;
     correctAnswer: string;
@@ -11,7 +12,7 @@ export type AnswerType = {
 // These are the props used for the component
 type Props = {
     answers: string[];
-    callback: any;
+    callback: (e: React.MouseEvent<HTMLButtonElement>) => void;
     question: string;
     questionNr: number;
     // the 'userAnswer' can be undefined in case there is no answers yet, this is how we define the type to be either
@@ -39,9 +40,10 @@ const QuestionCard: React.FC<Props> = ({
             to handle what happens when any button is clicked */}
             {answers.map((answer) => (
                 <div key={answer}>
-                    <button disabled={!!userAnswer} value={answer} onClick={callback}>
-                        <span dangerouslySetInnerHTML={{__html: answer}} />
-                    </button>
+                    <Answer disabled={!!userAnswer}
+                    value={answer}
+                    onClick={callback}
+                    label={<span dangerouslySetInnerHTML={{__html: answer}}/>} />
                 </div>
             ))}
         </div>
