@@ -1,0 +1,21 @@
+.storybook-question {
+    font-size: x-large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-radius: 10px;
+    padding: 5px 5px 5px 5px;
+    display: inline-block;
+    border-style: solid;
+    text-align: center;
+    margin-top: 1cm;
+    margin-bottom: 1cm;
+}
+
+.storybook-question--primary {
+    background-color: gold;
+    color: black;
+}
+
+.storybook-question--secondary {
+    background-color: blueviolet;
+    color: black;
+}

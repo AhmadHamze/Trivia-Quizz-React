@@ -1,5 +1,6 @@
 import React from 'react';
 import { Answer } from './answer-tag/Answer';
+import { Question } from './question-tag/Question';
 
 // First define the type of an answer given by the user
 export type AnswerType = {
@@ -33,17 +34,21 @@ const QuestionCard: React.FC<Props> = ({
         <p className='question'>
             Question: {questionNr} / {totalQuestions}
         </p>
-        <p dangerouslySetInnerHTML={{__html: question}} />
+        {/* <p dangerouslySetInnerHTML={{__html: question}} /> */}
+        <Question question={question}/>
         <div>
             {/* for each answer return a div where the user can click a button to confirm the answer 
             if the user has given an answer the button will be disabled and a callback will be called
             to handle what happens when any button is clicked */}
             {answers.map((answer) => (
                 <div key={answer}>
-                    <Answer disabled={!!userAnswer}
-                    value={answer}
-                    onClick={callback}
-                    label={<span dangerouslySetInnerHTML={{__html: answer}}/>} />
+                    <Answer
+                        size="large"
+                        disabled={!!userAnswer}
+                        value={answer}
+                        onClick={callback}>
+                        {<span dangerouslySetInnerHTML={{__html: answer}}/>}
+                    </Answer>
                 </div>
             ))}
         </div>

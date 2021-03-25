@@ -2,8 +2,10 @@ import React from 'react';
 import './answer.css';
 
 export interface AnswerProps {
+    //A ReactNode is a ReactElement, a ReactFragment, a string, a number
+    //or an array of ReactNodes, or null, or undefined, or a boolean
+    children: React.ReactNode,
     disabled?: boolean;
-    label: any;
     onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
     primary?: boolean;
     size?: 'small' | 'medium' | 'large';
@@ -11,9 +13,9 @@ export interface AnswerProps {
 }
 
 export const Answer: React.FC<AnswerProps> = ({
+    children,
     primary = true,
     size = 'medium',
-    label,
     ...props
 }) => {
     const mode = primary? 'storybook-answer--primary': 'storybook-answer--secondary';
@@ -21,7 +23,7 @@ export const Answer: React.FC<AnswerProps> = ({
         <button
         className={['storybook-answer', `storybook-answer--${size}`, mode].join(' ')}
         {...props}>
-            {label}
+            {children}
         </button>
-    )
+    );
 };

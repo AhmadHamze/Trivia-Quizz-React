@@ -3,31 +3,33 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { Answer, AnswerProps } from './Answer';
 
 export default {
-    title: 'Answer',
+    title: 'QuestionCard/Answer',
     component: Answer,
+    args: {
+        children: 'Answer'
+    }
 } as Meta;
 
-const Template: Story<AnswerProps> = (args) => <Answer {...args} />;
+const Template: Story<AnswerProps> = (args) => <Answer {...args}/>;
 
-export const Primary = Template.bind({});
-Primary.args = {
-    label: 'Answer',
+export const PrimaryAnswer = Template.bind({});
+PrimaryAnswer.args = {
+
 }
 
-export const Secondary = Template.bind({});
-Secondary.args = {
+export const SecondaryAnswer = Template.bind({});
+SecondaryAnswer.args = {
     primary: false,
-    label: 'Answer',
 }
 
 export const Large = Template.bind({});
 Large.args = {
     size: 'large',
-    label: 'Answer',
+    children: 'Long Answer',
 }
 
 export const Small = Template.bind({});
-Large.args = {
+Small.args = {
     size: 'small',
-    label: 'Answer',
+    children: 'Ans',
 }

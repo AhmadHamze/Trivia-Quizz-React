@@ -5,6 +5,8 @@ import QuestionCard from './components/question-card';
 // importing types
 import { QuestionExtended } from './api/quizz-api';
 import { AnswerType } from './components/question-card';
+import { Button } from './stories/Button';
+import { Small } from './components/answer-tag/Answer.stories';
 
 
 const TOTAL_QUESTIONS = 10;
@@ -55,9 +57,8 @@ function App() {
   return (
     <div className="container">
       <h1>Trivia Quizz</h1>
-      {gameOver? (<button className="startButton" onClick={startQuizz}>
-        Start Quizz
-      </button>): null}
+      {gameOver? (<Button label="Start Quizz" backgroundColor="lightgreen" onClick={startQuizz}>
+      </Button>): null}
       {!gameOver? (<p className="score">Score: {score}</p>) : null}
       {loading? (<p>Loading...</p>): null}
       {!loading && !gameOver? (<QuestionCard
@@ -69,9 +70,9 @@ function App() {
         totalQuestions = {TOTAL_QUESTIONS}
       />): null}
       {!gameOver && !loading && userAnswers.length === number + 1?
-       (<button className="next" onClick={nextQuestion}>
+       (<Small onClick={nextQuestion} primary={false}>
         {number !== TOTAL_QUESTIONS - 1? (<span>Next Question</span>): (<span>Restart Quizz</span>)}
-      </button>): null}
+      </Small>): null}
     </div>
   );
 }

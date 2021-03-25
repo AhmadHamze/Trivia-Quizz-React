@@ -3,6 +3,10 @@
     border-style: inset;
     border-radius: 25px;
     text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 0.25cm;
+    margin-bottom: 0.25cm;
 }
 
 .storybook-answer--primary {
