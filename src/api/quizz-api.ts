@@ -1,4 +1,4 @@
-import { shuffleArray } from "../utilities/shuffle-array";
+import { shuffleArray } from '../utilities/shuffle-array';
 
 // Create a type to handle the response returned by the API.
 export type Question = {

@@ -61,6 +61,7 @@ function App() {
       </Button>): null}
       {!gameOver? (<p className="score">Score: {score}</p>) : null}
       {loading? (<p>Loading...</p>): null}
+      {/* QuestionCard is only shown if the game is not loading and if the game is not over*/}
       {!loading && !gameOver? (<QuestionCard
         answers = {questions[number].answers}
         callback = {checkAnswer}
