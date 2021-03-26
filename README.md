@@ -131,3 +131,23 @@ It is called in the *callback* prop of the *QuestionCard* component.
 It is called just after the *QuestionCard*, in the **Small** UI component as the callback of the *onClick* prop.<br>
 Note that this component is displayed only if the *gameOver* is `true`, *loading* is `false` and if the user has
 answered the current question.
+
+## Images
+
+The quizz starts like this
+
+![start the quizz](./readme-images/start.png)
+
+Before the user answers
+
+![before answering](./readme-images/before-answering.png)
+
+After the user answers
+
+![after answering](./readme-images/after-answering.png)
+
+At the end of the quizz
+
+![end](./readme-images/end-of-quizz.png)
+
+Clicking restart will return the user to the first image.
