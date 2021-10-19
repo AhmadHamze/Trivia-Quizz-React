@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { getQuizzData } from "./api/quizz-api";
-import QuestionCard from "./components/question-card";
+import QuestionCard from "./components/question-card/QuestionCard";
 
 // importing types
 import { QuestionExtended } from "./api/quizz-api";
-import { AnswerType } from "./components/question-card";
+import { AnswerType } from "./components/question-card/QuestionCard";
 import { Button } from "./stories/Button";
 import { Small } from "./components/answer-tag/Answer.stories";
 
