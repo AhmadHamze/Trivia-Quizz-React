@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { getQuizzData } from "./api/quizz-api";
-import QuestionCard from "./components/question-card/QuestionCard";
+import { QuestionCard } from "./components/question-card/QuestionCard";
+import { Button } from "./components/button/Button";
 
 // importing types
 import { QuestionExtended } from "./api/quizz-api";
 import { AnswerType } from "./components/question-card/QuestionCard";
-import { Button } from "./stories/Button";
-import { Small } from "./components/answer-tag/Answer.stories";
 
 const TOTAL_QUESTIONS = 10;
 
@@ -55,11 +54,10 @@ function App() {
     <div className="container">
       <h1>Trivia Quizz</h1>
       {gameOver ? (
-        <Button
-          label="Start Quizz"
-          backgroundColor="lightgreen"
-          onClick={startQuizz}
-        ></Button>
+        <Button navigation={false} onClick={startQuizz}>
+          {" "}
+          Start Quizz{" "}
+        </Button>
       ) : null}
       {!gameOver ? <p className="score">Score: {score}</p> : null}
       {loading ? <p>Loading...</p> : null}
@@ -75,13 +73,13 @@ function App() {
         />
       ) : null}
       {!gameOver && !loading && userAnswers.length === number + 1 ? (
-        <Small onClick={nextQuestion} primary={false}>
+        <Button onClick={nextQuestion} navigation={true}>
           {number !== TOTAL_QUESTIONS - 1 ? (
             <span>Next Question</span>
           ) : (
             <span>Restart Quizz</span>
           )}
-        </Small>
+        </Button>
       ) : null}
     </div>
   );

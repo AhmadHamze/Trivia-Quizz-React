@@ -1,4 +1,3 @@
-import React from "react";
 import { Answer } from "../answer-tag/Answer";
 import { Question } from "../question-tag/Question";
 
@@ -22,7 +21,7 @@ type Props = {
   totalQuestions: number;
 };
 
-const QuestionCard: React.FC<Props> = ({
+export const QuestionCard: React.FC<Props> = ({
   answers,
   callback,
   question,
@@ -56,4 +55,4 @@ const QuestionCard: React.FC<Props> = ({
   </div>
 );
 
-export default QuestionCard;
+// export default QuestionCard;
