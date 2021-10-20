@@ -1,41 +1,46 @@
-.storybook-answer {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border-style: inset;
-    border-radius: 25px;
-    text-align: center;
-    display: inline-block;
-    cursor: pointer;
-    margin-top: 0.25cm;
-    margin-bottom: 0.25cm;
+.answer {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-style: inset;
+  border-radius: 25px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 0.25cm;
+  margin-bottom: 0.25cm;
 }
 
-.storybook-answer--primary {
-    background-color: blue;
-    color: white;
+.neutral {
+  background-color: #b3d6c8;
+  color: black;
 }
 
-.storybook-answer--secondary {
-    background-color: green;
-    color: white;
+.correct {
+  background-color: #02ff00;
+  color: black;
 }
 
-.storybook-answer--small {
-    width: 50px;
-    height: 12px;
-    padding: auto;
-    font-size: small;
+.false {
+  background-color: #eb1e1e;
+  color: black;
 }
 
-.storybook-answer--medium {
-    width: 100px;
-    height: 25px;
-    padding: auto;
-    font-size: medium;
+.answer--small {
+  width: 50px;
+  height: 12px;
+  padding: auto;
+  font-size: small;
 }
 
-.storybook-answer--large {
-    width: 200px;
-    height: 50px;
-    padding: auto;
-    font-size: large;
+.answer--medium {
+  width: 100px;
+  height: 25px;
+  padding: auto;
+  font-size: medium;
+}
+
+.answer--large {
+  width: 200px;
+  height: 50px;
+  padding: auto;
+  font-size: large;
 }

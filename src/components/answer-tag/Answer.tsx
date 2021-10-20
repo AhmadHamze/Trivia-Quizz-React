@@ -6,25 +6,20 @@ export interface AnswerProps {
   children: React.ReactNode;
   disabled?: boolean;
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
-  primary?: boolean;
+  state?: "neutral" | "correct" | "false";
   size?: "small" | "medium" | "large";
   value?: string;
 }
 
 export const Answer: React.FC<AnswerProps> = ({
   children,
-  primary = true,
+  state = "neutral",
   size = "medium",
   ...props
 }) => {
-  const mode = primary
-    ? "storybook-answer--primary"
-    : "storybook-answer--secondary";
   return (
     <button
-      className={["storybook-answer", `storybook-answer--${size}`, mode].join(
-        " "
-      )}
+      className={["answer", `answer--${size}`, state].join(" ")}
       {...props}
     >
       {children}

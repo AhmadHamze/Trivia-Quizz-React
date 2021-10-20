@@ -10,7 +10,7 @@ export type AnswerType = {
 };
 
 // These are the props used for the component
-type Props = {
+type QuestionCardProps = {
   answers: string[];
   callback: (e: React.MouseEvent<HTMLButtonElement>) => void;
   question: string;
@@ -21,7 +21,7 @@ type Props = {
   totalQuestions: number;
 };
 
-export const QuestionCard: React.FC<Props> = ({
+export const QuestionCard: React.FC<QuestionCardProps> = ({
   answers,
   callback,
   question,
@@ -42,6 +42,15 @@ export const QuestionCard: React.FC<Props> = ({
       {answers.map((answer) => (
         <div key={answer}>
           <Answer
+            state={
+              userAnswer?.isCorrect === undefined
+                ? "neutral"
+                : userAnswer.answer === answer && userAnswer.isCorrect
+                ? "correct"
+                : userAnswer.answer === answer
+                ? "false"
+                : "neutral"
+            }
             size="large"
             disabled={!!userAnswer}
             value={answer}

@@ -37,7 +37,7 @@ function App() {
       }
       const answerObject = {
         answer,
-        correctAnswer: questions[number].question,
+        correctAnswer: questions[number].correct_answer,
         isCorrect,
         question: questions[number].question,
       };
