@@ -30,10 +30,9 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   totalQuestions,
 }) => (
   <div>
-    <p className="question">
+    <p>
       Question: {questionNr} / {totalQuestions}
     </p>
-    {/* <p dangerouslySetInnerHTML={{__html: question}} /> */}
     <Question question={question} />
     <div>
       {/* for each answer return a div where the user can click a button to confirm the answer 
@@ -51,17 +50,14 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
                 ? "false"
                 : "neutral"
             }
-            size="large"
             disabled={!!userAnswer}
             value={answer}
             onClick={callback}
           >
-            {<span dangerouslySetInnerHTML={{ __html: answer }} />}
+            {answer}
           </Answer>
         </div>
       ))}
     </div>
   </div>
 );
-
-// export default QuestionCard;

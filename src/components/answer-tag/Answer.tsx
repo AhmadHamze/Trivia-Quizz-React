@@ -7,21 +7,16 @@ export interface AnswerProps {
   disabled?: boolean;
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   state?: "neutral" | "correct" | "false";
-  size?: "small" | "medium" | "large";
   value?: string;
 }
 
 export const Answer: React.FC<AnswerProps> = ({
   children,
   state = "neutral",
-  size = "medium",
   ...props
 }) => {
   return (
-    <button
-      className={["answer", `answer--${size}`, state].join(" ")}
-      {...props}
-    >
+    <button className={["answer", "size", state].join(" ")} {...props}>
       {children}
     </button>
   );

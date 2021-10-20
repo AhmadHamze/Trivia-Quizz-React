@@ -12,24 +12,19 @@ export default {
 
 const Template: Story<AnswerProps> = (args) => <Answer {...args} />;
 
-// export const PrimaryAnswer = Template.bind({});
-// PrimaryAnswer.args = {
-
-// }
-
-// export const SecondaryAnswer = Template.bind({});
-// SecondaryAnswer.args = {
-//     primary: false,
-// }
-
-export const Large = Template.bind({});
-Large.args = {
-  size: "large",
-  children: "Long Answer",
+export const Neutral = Template.bind({});
+Neutral.args = {
+  state: "neutral",
+  children: "Answer",
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: "small",
-  children: "Ans",
+export const Correct = Template.bind({});
+Correct.args = {
+  state: "correct",
+  children: "Answer",
+};
+export const False = Template.bind({});
+False.args = {
+  state: "false",
+  children: "Answer",
 };
