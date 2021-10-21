@@ -2,6 +2,7 @@ import { useState } from "react";
 import { getQuizzData } from "./api/quizz-api";
 import { QuestionCard } from "./components/question-card/QuestionCard";
 import { Button } from "./components/button/Button";
+import { Result } from "./components/result/Result";
 
 // importing types
 import { QuestionExtended } from "./api/quizz-api";
@@ -77,9 +78,16 @@ function App() {
           {number !== TOTAL_QUESTIONS - 1 ? (
             <span>Next Question</span>
           ) : (
-            <span>Restart Quizz</span>
+            <span>Show Result</span>
           )}
         </Button>
+      ) : null}
+      {gameOver && userAnswers.length === TOTAL_QUESTIONS ? (
+        <Result
+          answers={userAnswers}
+          score={score}
+          totalScore={TOTAL_QUESTIONS}
+        ></Result>
       ) : null}
     </div>
   );
