@@ -10,7 +10,7 @@ export type AnswerType = {
 };
 
 // These are the props used for the component
-type QuestionCardProps = {
+export type QuestionCardProps = {
   answers: string[];
   callback: (e: React.MouseEvent<HTMLButtonElement>) => void;
   question: string;
