@@ -12,7 +12,10 @@ export const Button: React.FC<ButtonProps> = ({
   children,
 }) => {
   return (
-    <button className={navigation ? "navigation" : "start"} onClick={onClick}>
+    <button
+      className={`button ${navigation ? "navigation" : "start"}`}
+      onClick={onClick}
+    >
       {children}
     </button>
   );

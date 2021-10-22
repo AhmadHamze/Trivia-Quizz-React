@@ -8,6 +8,8 @@ import { Result } from "./components/result/Result";
 import { QuestionExtended } from "./api/quizz-api";
 import { AnswerType } from "./components/question-card/QuestionCard";
 
+import "./app.css";
+
 const TOTAL_QUESTIONS = 10;
 
 function App() {
@@ -52,15 +54,14 @@ function App() {
   }
 
   return (
-    <div className="container">
-      <h1>Trivia Quizz</h1>
+    <div className="mainContainer">
+      <h1>Trivia Quiz</h1>
       {gameOver ? (
         <Button navigation={false} onClick={startQuizz}>
           {" "}
-          Start Quizz{" "}
+          Start Quiz{" "}
         </Button>
       ) : null}
-      {!gameOver ? <p className="score">Score: {score}</p> : null}
       {loading ? <p>Loading...</p> : null}
       {/* QuestionCard is only shown if the game is not loading and if the game is not over*/}
       {!loading && !gameOver ? (

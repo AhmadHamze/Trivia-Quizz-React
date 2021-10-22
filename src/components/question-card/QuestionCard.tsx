@@ -1,5 +1,6 @@
 import { Answer } from "../answer-tag/Answer";
 import { Question } from "../question-tag/Question";
+import "./questioncard.css";
 
 // First define the type of an answer given by the user
 export type AnswerType = {
@@ -29,9 +30,9 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   userAnswer,
   totalQuestions,
 }) => (
-  <div>
-    <p>
-      Question: {questionNr} / {totalQuestions}
+  <div className="card">
+    <p className="questionNr">
+      Question {questionNr} / {totalQuestions}
     </p>
     <Question question={question} />
     <div>
@@ -39,7 +40,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
             if the user has given an answer the button will be disabled and a callback will be called
             to handle what happens when any button is clicked */}
       {answers.map((answer) => (
-        <div key={answer}>
+        <div className="answers" key={answer}>
           <Answer
             state={
               userAnswer?.isCorrect === undefined

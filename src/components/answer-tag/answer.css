@@ -1,12 +1,11 @@
 .answer {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Sofia";
+  font-size: 2em;
   border-style: inset;
   border-radius: 25px;
   text-align: center;
-  display: inline-block;
   cursor: pointer;
-  margin-top: 0.25cm;
-  margin-bottom: 0.25cm;
+  margin-bottom: 5px;
 }
 
 .neutral {
@@ -25,8 +24,6 @@
 }
 
 .size {
-  width: 200px;
-  height: 50px;
+  width: 66%;
   padding: auto;
-  font-size: large;
 }

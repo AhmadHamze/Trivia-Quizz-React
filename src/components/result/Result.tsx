@@ -13,7 +13,7 @@ export const Result: React.FC<ResultProps> = ({
   totalScore,
 }) => {
   return (
-    <div>
+    <div className="tableContainer">
       <table>
         <tr>
           <th>Question</th>
@@ -21,7 +21,7 @@ export const Result: React.FC<ResultProps> = ({
           <th>Correct Answer</th>
         </tr>
         {answers.map((answer) => (
-          <tr>
+          <tr className={`${answer.isCorrect ? "correct" : "false"}`}>
             <td>
               <span dangerouslySetInnerHTML={{ __html: answer.question }} />
             </td>
@@ -36,7 +36,7 @@ export const Result: React.FC<ResultProps> = ({
           </tr>
         ))}
       </table>
-      <div>
+      <div className="finalScore">
         You Scored {score}/{totalScore}
       </div>
     </div>
