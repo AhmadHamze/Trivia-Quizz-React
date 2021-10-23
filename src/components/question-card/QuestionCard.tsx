@@ -55,7 +55,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
             value={answer}
             onClick={callback}
           >
-            {answer}
+            <span dangerouslySetInnerHTML={{ __html: answer }} />
           </Answer>
         </div>
       ))}
