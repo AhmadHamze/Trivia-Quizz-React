@@ -51,4 +51,4 @@ Answer is correct
 
 ## Further Reading
 
-If you want to know more take a look at ...
+If you want more explantion take a look at my website [React Trivia Quiz](https://ahmadhamze.github.io/posts/react/trivia-quiz/)
